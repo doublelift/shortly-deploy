@@ -25,14 +25,15 @@ module.exports = function(grunt) {
 
     jshint: {
       files: [
-        // Add filespec list here
+        './**/*.js'
       ],
       options: {
         force: 'true',
         jshintrc: '.jshintrc',
         ignores: [
           'public/lib/**/*.js',
-          'public/dist/**/*.js'
+          'public/dist/**/*.js',
+          './node_modules/**/*.js'
         ]
       }
     },
@@ -92,6 +93,11 @@ module.exports = function(grunt) {
   grunt.registerTask('test', [
     'mochaTest'
   ]);
+
+  // bullshit new task
+  // grunt.registerTask('jshinty', [
+  //   'jshint'
+  // ]);
 
   grunt.registerTask('build', [
   ]);
